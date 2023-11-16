@@ -510,7 +510,7 @@ int main()
 	Model totem("resources/objects/Totem/totem.obj");
 	Model puertaizq("resources/objects/Puerta izq/puerta izq.obj");
 	Model puertader("resources/objects/Puerta der/puerta der.obj");
-	Model banca("resources/objects/Banca/3d-model.obj");
+	Model banca("resources/objects/Banca/banca.obj");
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);

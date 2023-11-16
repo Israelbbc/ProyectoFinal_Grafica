@@ -1,5 +1,5 @@
 # 3ds Max Wavefront OBJ Exporter v0.99 - (c)2007 guruware
-# File Created: 16.11.2023 14:43:35
+# File Created: 16.11.2023 14:59:30
 
 mtllib banca.mtl
 
@@ -63,7 +63,7 @@ vt 0.0000 0.0000 0.0000
 
 o Group_003
 g Group_003
-usemtl banco
+usemtl 03___Default
 s off
 f 1/1/1 2/1/1 3/1/1 
 f 3/1/1 4/1/1 1/1/1 
@@ -2928,7 +2928,7 @@ vt -3.9348 0.3154 0.0000
 
 o Group_002
 g Group_002
-usemtl 03___Default
+usemtl 07___Default
 s off
 f 36/2/13 37/3/14 38/4/15 
 f 38/4/15 39/5/16 36/2/13 
@@ -4100,7 +4100,7 @@ vt 0.0000 0.0000 0.0000
 
 o Group_001
 g Group_001
-usemtl banco
+usemtl 03___Default
 s off
 f 588/1772/469 589/1772/469 590/1772/469 
 f 590/1772/469 591/1772/469 588/1772/469 
