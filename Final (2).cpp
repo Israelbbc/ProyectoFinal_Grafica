@@ -488,11 +488,6 @@ int main()
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);
 
-	ModelAnim ninja("resources/objects/ZombieWalk/ZombieWalk.dae");
-	ninja.initShaders(animShader.ID);
-
-	ModelAnim mutant("resources/objects/Mutant/HipHopDancing.dae");
-	mutant.initShaders(animShader.ID);
 
 	//Inicialización de KeyFrames
 	//for (int i = 0; i < MAX_FRAMES; i++)
@@ -683,26 +678,28 @@ int main()
 		calendario.Draw(staticShader);
 
 		//Piramide
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(20.0f, 10.0f, -300.0f));
-		model = glm::scale(model, glm::vec3(0.02f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, 0.0f, -350.0f));
+		model = glm::scale(model, glm::vec3(0.03f));
 		staticShader.setMat4("model", model);
 		piramide.Draw(staticShader);
 
 		//Pilar destruido
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, 10.0f, -225.0f));
-		model = glm::scale(model, glm::vec3(50.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(150.0f, 0.0f, -350.0f));
+		model = glm::scale(model, glm::vec3(80.0f));
 		staticShader.setMat4("model", model);
 		pilar.Draw(staticShader);
 
 		//Disco de la muerte
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-30.0f, 10.0f, -300.0f));
-		model = glm::scale(model, glm::vec3(1.f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, 10.0f, -350.0f));
+		model = glm::scale(model, glm::vec3(1.0f));
 		staticShader.setMat4("model", model);
 		disco.Draw(staticShader);
 
 		//Craneo
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-200.0f, 10.0f, 150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(220.0f, 10.0f, -150.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		model = glm::scale(model, glm::vec3(0.6f));
+
 		staticShader.setMat4("model", model);
 		craneo.Draw(staticShader);
 
@@ -712,7 +709,9 @@ int main()
 		tren.Draw(staticShader);
 
 		//Cabeza olmeca
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, 10.0f, 150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-300.0f, 10.0f, -150.0f));
+		model = glm::scale(model, glm::vec3(3.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		staticShader.setMat4("model", model);
 		cabezaolmeca.Draw(staticShader);
 
