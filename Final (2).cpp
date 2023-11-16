@@ -484,6 +484,7 @@ int main()
 	Model calendario("resources/objects/Calendario/Calenadrio.obj");
 	Model cabezaolmeca("resources/objects/Cabeza/cabezaolmeca.obj");
 	Model cofre("resources/objects/Cofre/cofre.obj");
+	Model totem("resources/objects/Totem/totem.obj");
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);
@@ -721,6 +722,11 @@ int main()
 		staticShader.setMat4("model", model);
 		cofre.Draw(staticShader);
 
+		//Totem
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(150.0f, 35.0f, 150.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		totem.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
