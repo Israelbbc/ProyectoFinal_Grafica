@@ -1,10 +1,9 @@
 ﻿/*---------------------------------------------------------*/
+/* ----------------  Práctica  11                 -----------*/
 /*-----------------    2024-1   ---------------------------*/
-/*-------------------- Proyecto Final             ---------------*/
-/*------------- Barrionuevo Perez Daniel Alejandro  No. Cuenta: 316303116---------------*/
-/*------------- Bustamante Colín Israel			    No. de cuenta: 316193384---------------*/
-/*------------- Martinez Bautista Victor Eduardo    No. Cuenta: 316255637---------------*/
-#include <Windows.h> 
+/*------------- Alumno:Barrionuevo Pérez Daniel Alejandro              ---------------*/
+/*------------- No. Cuenta: 316303116                 ---------------*/
+#include <Windows.h>
 
 #include <glad/glad.h>
 #include <glfw3.h>	//main
@@ -483,6 +482,7 @@ int main()
 	Model tren("resources/objects/Tren/trenecito.obj");
 	Model piramide("resources/objects/piramide/piramide.obj");
 	Model calendario("resources/objects/Calendario/Calenadrio.obj");
+	Model cabezaolmeca("resources/objects/Cabeza/cabezaolmeca.obj");
 
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
@@ -710,6 +710,12 @@ int main()
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, 10.0f, 150.0f));
 		staticShader.setMat4("model", model);
 		tren.Draw(staticShader);
+
+		//Cabeza olmeca
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, 10.0f, 150.0f));
+		staticShader.setMat4("model", model);
+		cabezaolmeca.Draw(staticShader);
+
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
