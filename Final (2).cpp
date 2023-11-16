@@ -115,7 +115,7 @@ float	incX = 0.0f,
 		girodiscoInc = 0.0f;
 
 #define MAX_FRAMES 19  //Nos va a indicar cuantos cuadros claves va a poder guardar nuestro sistema
-int i_max_steps = 120;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
+int i_max_steps = 60;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
 int i_curr_steps = 0;
 
 // Esta estructura es la que se va a encargar de guardar los datos para mi sistema
