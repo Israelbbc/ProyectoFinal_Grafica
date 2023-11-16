@@ -770,10 +770,21 @@ int main()
 		staticShader.setMat4("model", model);
 		puertaizq.Draw(staticShader);
 
-		//Banca 
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -20.0f)); 
-		//model = glm::scale(model, glm::vec3(25.0f)); 
+		//Banca1 
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, 0.0f, -125.0f)); 
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model); 
+		banca.Draw(staticShader);
+
+		//Banca2 
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, 0.0f, -125.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		banca.Draw(staticShader);
+
+		//Banca3 
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -200.0f));
+		staticShader.setMat4("model", model);
 		banca.Draw(staticShader);
 
 

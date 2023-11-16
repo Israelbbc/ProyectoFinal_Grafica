@@ -2,16 +2,26 @@
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\include\shader_m.h(44,40): warning C4101: 'e': variable local sin referencia
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\include\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\include\modelAnim.h(520,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1041,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1042,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1046,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1047,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1049,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1050,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1058,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1052,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1053,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1057,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1058,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1060,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1061,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1069,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(context.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(init.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(input.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(monitor.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(monitor.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(vulkan.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(vulkan.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(window.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(window.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_init.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(win32_init.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(win32_joystick.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(win32_joystick.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_monitor.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(win32_monitor.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_time.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(win32_time.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(win32_thread.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(win32_thread.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(win32_window.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(win32_window.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(wgl_context.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(wgl_context.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(egl_context.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(egl_context.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+glfw3.lib(osmesa_context.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(osmesa_context.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
   CGEIHC_20241_04_BCI.vcxproj -> C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Debug\CGEIHC_20241_04_BCI.exe
