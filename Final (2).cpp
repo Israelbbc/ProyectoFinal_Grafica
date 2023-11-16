@@ -45,7 +45,7 @@ void getResolution(void);
 
 // camera
 Camera camera(glm::vec3(0.0f, 30.0f, 490.0f));
-float MovementSpeed = 0.1f;
+float MovementSpeed = 100.0f;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -89,6 +89,7 @@ int circuito_auto = 0;
 
 //Keyframes (Manipulación y dibujo)
 float	posX = 0.0f,
+		posX2 = 0.0f,
 		posY = 0.0f,
 		posZ = 0.0f,
 		rotRodIzq = 0.0f,
@@ -105,6 +106,7 @@ float	posX = 0.0f,
 
 // Para calculo de invremento que se va a realizar
 float	incX = 0.0f,
+		incX2 = 0.0f,
 		incY = 0.0f,
 		incZ = 0.0f,
 		rotInc = 0.0f,
@@ -120,7 +122,7 @@ float	incX = 0.0f,
 		giropiedraInc = 0.0f;
 
 #define MAX_FRAMES 20  //Nos va a indicar cuantos cuadros claves va a poder guardar nuestro sistema
-int i_max_steps = 60;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
+int i_max_steps = 120;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
 int i_curr_steps = 0;
 
 // Esta estructura es la que se va a encargar de guardar los datos para mi sistema
@@ -128,6 +130,7 @@ typedef struct _frame
 {
 	//Variables para GUARDAR Key Frames
 	float posX;		//Variable para PosicionX
+	float posX2;
 	float posY;		//Variable para PosicionY
 	float posZ;		//Variable para PosicionZ
 	float rotRodIzq;
@@ -156,6 +159,7 @@ void saveFrame(void)
 	std::cout << "Frame Index = " << FrameIndex << std::endl;
 
 	KeyFrame[FrameIndex].posX = posX;
+	KeyFrame[FrameIndex].posX2 = posX2;
 	KeyFrame[FrameIndex].posY = posY;
 	KeyFrame[FrameIndex].posZ = posZ;
 
@@ -181,6 +185,7 @@ void saveFrame(void)
 void resetElements(void)
 {
 	posX = KeyFrame[0].posX;
+	posX2 = KeyFrame[0].posX2;
 	posY = KeyFrame[0].posY;
 	posZ = KeyFrame[0].posZ;
 
@@ -204,6 +209,7 @@ void resetElements(void)
 void interpolation(void)
 {
 	incX = (KeyFrame[playIndex + 1].posX - KeyFrame[playIndex].posX) / i_max_steps;
+	incX2 = (KeyFrame[playIndex + 1].posX2 - KeyFrame[playIndex].posX2) / i_max_steps;
 	incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
 	incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
 
@@ -265,6 +271,7 @@ void animate(void)
 		{
 			//Draw animation
 			posX += incX;
+			posX2 += incX2;
 			posY += incY;
 			posZ += incZ;
 
@@ -526,6 +533,7 @@ int main()
 		KeyFrame[i].giroMonito = 0;*/
 
 		KeyFrame[0].posX = 0.0f;
+		KeyFrame[0].posX2 = 0.0f;
 		KeyFrame[0].posY = 0.0f;
 		KeyFrame[0].posZ = 0.0f;
 		KeyFrame[0].rotRodIzq = 0.0f;
@@ -539,6 +547,7 @@ int main()
 		KeyFrame[0].giropiedra = 0.0f;
 
 		KeyFrame[1].posX = -100.0f;
+		KeyFrame[1].posX2 = 100.0f;
 		KeyFrame[1].posY = 50.0f;
 		KeyFrame[1].posZ = 0.0f;
 		KeyFrame[1].rotRodIzq = 30.0f;
@@ -746,6 +755,7 @@ int main()
 		//Cabeza olmeca
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-200.0f, 10.0f, -150.0f));
 		model = glm::scale(model, glm::vec3(3.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(giroCabeza), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		staticShader.setMat4("model", model);
 		cabezaolmeca.Draw(staticShader);
@@ -771,9 +781,9 @@ int main()
 		puertaizq.Draw(staticShader);
 
 		//Banca1 
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, 0.0f, -125.0f)); 
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-50.0f, 0.0f, -125.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		staticShader.setMat4("model", model); 
+		staticShader.setMat4("model", model);
 		banca.Draw(staticShader);
 
 		//Banca2 
@@ -791,7 +801,7 @@ int main()
 		//Puerta der
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
-		//model = glm::translate(model, glm::vec3(posX, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(posX2, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.9f));
 		staticShader.setMat4("model", model);
 		puertader.Draw(staticShader);
