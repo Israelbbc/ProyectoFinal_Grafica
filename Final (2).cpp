@@ -735,14 +735,15 @@ int main()
 		craneo.Draw(staticShader);
 
 		//Tren
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 5.0f, 200.0f));
-		model = glm::scale(model, glm::vec3(2.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(225.0f, 0.0f, 350.0f));
+		model = glm::scale(model, glm::vec3(1.3f));
+		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		tren.Draw(staticShader);
 
 
 		//Cabeza olmeca
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-300.0f, 10.0f, -150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-200.0f, 10.0f, -150.0f));
 		model = glm::scale(model, glm::vec3(3.0f));
 		model = glm::rotate(model, glm::radians(giroCabeza), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		staticShader.setMat4("model", model);
