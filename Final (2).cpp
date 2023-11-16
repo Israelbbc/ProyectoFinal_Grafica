@@ -485,6 +485,8 @@ int main()
 	Model cabezaolmeca("resources/objects/Cabeza/cabezaolmeca.obj");
 	Model cofre("resources/objects/Cofre/cofre.obj");
 	Model totem("resources/objects/Totem/totem.obj");
+	Model puertaizq("resources/objects/Puerta izq/puerta izq.obj");
+	Model puertader("resources/objects/Puerta der/puerta der.obj");
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);
@@ -727,6 +729,21 @@ int main()
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		totem.Draw(staticShader);
+
+		//Puerta izq
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.9f));
+		staticShader.setMat4("model", model);
+		puertaizq.Draw(staticShader);
+
+		//Puerta der
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.9f));
+		staticShader.setMat4("model", model);
+		puertader.Draw(staticShader);
+
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
