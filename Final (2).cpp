@@ -485,6 +485,10 @@ int main()
 	Model cabezaolmeca("resources/objects/Cabeza/cabezaolmeca.obj");
 	Model cofre("resources/objects/Cofre/cofre.obj");
 	Model totem("resources/objects/Totem/totem.obj");
+	//Model guerrero_a("resources/objects/Guerrero_A/guerrero_a.obj");
+
+	ModelAnim guerrero_a("resources/objects/Guerrero_A/guerrero_a.dae");
+	guerrero_a.initShaders(animShader.ID);
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);
@@ -727,6 +731,15 @@ int main()
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		totem.Draw(staticShader);
+
+		//Guerrero_Azteca
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(220.0f, 0.0f, -180.0f));
+		model = glm::scale(model, glm::vec3(15.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		/*staticShader.setMat4("model", model);
+		guerrero_a.Draw(staticShader);*/
+		animShader.setMat4("model", model);
+		guerrero_a.Draw(animShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
