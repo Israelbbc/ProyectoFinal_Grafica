@@ -510,6 +510,7 @@ int main()
 	Model totem("resources/objects/Totem/totem.obj");
 	Model puertaizq("resources/objects/Puerta izq/puerta izq.obj");
 	Model puertader("resources/objects/Puerta der/puerta der.obj");
+	Model banca("resources/objects/Banca/3d-model.obj");
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);
@@ -769,6 +770,13 @@ int main()
 		staticShader.setMat4("model", model);
 		puertaizq.Draw(staticShader);
 
+		//Banca 
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -20.0f)); 
+		//model = glm::scale(model, glm::vec3(25.0f)); 
+		staticShader.setMat4("model", model); 
+		banca.Draw(staticShader);
+
+
 		//Puerta der
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
@@ -776,6 +784,8 @@ int main()
 		model = glm::scale(model, glm::vec3(0.9f));
 		staticShader.setMat4("model", model);
 		puertader.Draw(staticShader);
+
+		
 
 
 		// -------------------------------------------------------------------------------------------------------------------------
