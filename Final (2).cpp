@@ -692,7 +692,7 @@ int main()
 		disco.Draw(staticShader);
 
 		//Craneo
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(220.0f, 10.0f, -150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(220.0f, 10.0f, -170.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		model = glm::scale(model, glm::vec3(0.6f));
 
