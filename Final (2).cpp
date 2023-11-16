@@ -96,9 +96,12 @@ float	posX = 0.0f,
 		giroBrazoDer = 0.0f,
 		giroBrazoIzq = 0.0f,
 		rotRodDer = 0.0f,
-		giroCabeza = 0.0f,
 
-girodisco = 0.0f;
+		giroCabeza = 0.0f,
+		girodisco = 0.0f,
+		girocalendario = 0.0f,
+		giroojo = 0.0f,
+		giropiedra = 0.0f;
 
 // Para calculo de invremento que se va a realizar
 float	incX = 0.0f,
@@ -109,11 +112,14 @@ float	incX = 0.0f,
 		girobrazoDerInc = 0.0f,
 		giroBrazoIzqInc = 0.0f,
 		rotRodDerInc = 0.0f,
+
 		giroCabezaInc = 0.0f,
+		girodiscoInc = 0.0f,
+		girocalendarioInc = 0.0f,
+		giroojoInc = 0.0f,
+		giropiedraInc = 0.0f;
 
-		girodiscoInc = 0.0f;
-
-#define MAX_FRAMES 19  //Nos va a indicar cuantos cuadros claves va a poder guardar nuestro sistema
+#define MAX_FRAMES 20  //Nos va a indicar cuantos cuadros claves va a poder guardar nuestro sistema
 int i_max_steps = 60;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
 int i_curr_steps = 0;
 
@@ -129,9 +135,12 @@ typedef struct _frame
 	float giroBrazoDer;
 	float giroBrazoIzq;
 	float rotRodDer;
-	float giroCabeza;  //De estructura, encargada de guardar los datos  
 
+	float giroCabeza;  //De estructura, encargada de guardar los datos  
 	float girodisco;
+	float girocalendario;
+	float giroojo;
+	float giropiedra;
 
 }FRAME;
 
@@ -157,9 +166,13 @@ void saveFrame(void)
 
 	KeyFrame[FrameIndex].giroBrazoIzq = giroBrazoIzq;
 	KeyFrame[FrameIndex].rotRodDer = rotRodDer;
-	KeyFrame[FrameIndex].giroCabeza = giroCabeza; //Con esto el sistema va a poder guardar la informacion
 
+	KeyFrame[FrameIndex].giroCabeza = giroCabeza; //Con esto el sistema va a poder guardar la informacion
 	KeyFrame[FrameIndex].girodisco = girodisco;
+	KeyFrame[FrameIndex].girocalendario = girocalendario;
+	KeyFrame[FrameIndex].giroojo = giroojo;
+	KeyFrame[FrameIndex].giropiedra = giropiedra;
+
 
 	FrameIndex++;
 }
@@ -178,9 +191,13 @@ void resetElements(void)
 
 	giroBrazoIzq = KeyFrame[0].giroBrazoIzq;
 	rotRodDer = KeyFrame[0].rotRodDer;
-	giroCabeza = KeyFrame[0].giroCabeza; //Sustituye lo del escenario y comienza desde el cuadro clave cero
 
+	giroCabeza = KeyFrame[0].giroCabeza; //Sustituye lo del escenario y comienza desde el cuadro clave cero
 	girodisco = KeyFrame[0].girodisco;
+	girocalendario = KeyFrame[0].girocalendario;
+	giroojo = KeyFrame[0].giroojo;
+	giropiedra = KeyFrame[0].giropiedra;
+
 }
 
 //La funcion de interpolacion es la encargada de realizar la operacion matematica 
@@ -197,9 +214,14 @@ void interpolation(void)
 
 	giroBrazoIzqInc = (KeyFrame[playIndex + 1].giroBrazoIzq - KeyFrame[playIndex].giroBrazoIzq) / i_max_steps;
 	rotRodDerInc = (KeyFrame[playIndex + 1].rotRodDer - KeyFrame[playIndex].rotRodDer) / i_max_steps;
-	giroCabezaInc = (KeyFrame[playIndex + 1].giroCabeza - KeyFrame[playIndex].giroCabeza) / i_max_steps;
 
+
+	giroCabezaInc = (KeyFrame[playIndex + 1].giroCabeza - KeyFrame[playIndex].giroCabeza) / i_max_steps;
 	girodiscoInc = (KeyFrame[playIndex + 1].girodisco - KeyFrame[playIndex].girodisco) / i_max_steps;
+	girocalendarioInc = (KeyFrame[playIndex + 1].girocalendario - KeyFrame[playIndex].girocalendario) / i_max_steps;
+	giroojoInc = (KeyFrame[playIndex + 1].giroojo - KeyFrame[playIndex].giroojo) / i_max_steps;
+	giropiedraInc = (KeyFrame[playIndex + 1].giropiedra - KeyFrame[playIndex].giropiedra) / i_max_steps;
+
 }
 
 void animate(void)
@@ -253,9 +275,12 @@ void animate(void)
 
 			giroBrazoIzq += giroBrazoIzqInc;
 			rotRodDer += rotRodDerInc;
-			giroCabeza += giroCabezaInc; //Se le va aestar sumando a la variable de dibujo para que haga la transicion
 
+			giroCabeza += giroCabezaInc; //Se le va aestar sumando a la variable de dibujo para que haga la transicion
 			girodisco += girodiscoInc;
+			girocalendario += girocalendarioInc;
+			giroojo += giroojoInc;
+			giropiedra += giropiedraInc;
 
 			i_curr_steps++;
 		}
@@ -500,21 +525,29 @@ int main()
 		KeyFrame[i].giroMonito = 0;*/
 
 		KeyFrame[0].posX = 0.0f;
-		KeyFrame[0].posY = 25.0f;
+		KeyFrame[0].posY = 0.0f;
 		KeyFrame[0].posZ = 0.0f;
 		KeyFrame[0].rotRodIzq = 0.0f;
 		KeyFrame[0].giroMonito = 0.0f;
 		KeyFrame[0].giroBrazoDer = 0.0f;
 		KeyFrame[0].giroMonito = 90;
+		KeyFrame[0].giroCabeza = 0.0f;
 		KeyFrame[0].girodisco = 0.0f;
+		KeyFrame[0].girocalendario = 0.0f;
+		KeyFrame[0].giroojo = 0.0f;
+		KeyFrame[0].giropiedra = 0.0f;
 
-		KeyFrame[1].posX = 0.0f;
-		KeyFrame[1].posY = 25.0f;
+		KeyFrame[1].posX = -100.0f;
+		KeyFrame[1].posY = 50.0f;
 		KeyFrame[1].posZ = 0.0f;
 		KeyFrame[1].rotRodIzq = 30.0f;
 		KeyFrame[1].giroMonito = 0.0f;
 		KeyFrame[1].giroBrazoDer = -90.0f;
-		KeyFrame[1].girodisco = 45.0f;
+		KeyFrame[1].giroCabeza = 360.0f;
+		KeyFrame[1].girodisco = 360.0f;
+		KeyFrame[1].girocalendario = 1360.0f;
+		KeyFrame[1].giroojo = 360.0f;
+		KeyFrame[1].giropiedra = 360.0f;
 
 		/*KeyFrame[2].posX = 40.0f;
 		KeyFrame[2].posY = 0.0f;
@@ -652,7 +685,7 @@ int main()
 		//Ojo
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 10.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(1.0f));
-		tmp = model = glm::rotate(model, glm::radians(girodisco), glm::vec3(0.0f, 1.0f, 0.0f));
+		tmp = model = glm::rotate(model, glm::radians(giroojo), glm::vec3(0.0f, 1.0f, 0.0f));
 		//model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		ojo.Draw(staticShader);
@@ -661,6 +694,7 @@ int main()
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(200.0f, 10.0f, -50.0f));
 		model = glm::scale(model, glm::vec3(1.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giropiedra), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		piedra.Draw(staticShader);
 
@@ -669,12 +703,13 @@ int main()
 		//model = glm::translate(tmp, glm::vec3(0));
 		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		//model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(girocalendario), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		calendario.Draw(staticShader);
 
 		//Piramide
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, 0.0f, -350.0f));
+		model = glm::translate(model, glm::vec3(0.0f, posY , 0.0f));
 		model = glm::scale(model, glm::vec3(0.03f));
 		staticShader.setMat4("model", model);
 		piramide.Draw(staticShader);
@@ -688,6 +723,7 @@ int main()
 		//Disco de la muerte
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, 10.0f, -350.0f));
 		model = glm::scale(model, glm::vec3(1.0f));
+		model = glm::rotate(model, glm::radians(girodisco), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		disco.Draw(staticShader);
 
@@ -708,7 +744,7 @@ int main()
 		//Cabeza olmeca
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-300.0f, 10.0f, -150.0f));
 		model = glm::scale(model, glm::vec3(3.0f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
+		model = glm::rotate(model, glm::radians(giroCabeza), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		staticShader.setMat4("model", model);
 		cabezaolmeca.Draw(staticShader);
 
@@ -727,6 +763,7 @@ int main()
 		//Puerta izq
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
+		model = glm::translate(model, glm::vec3(posX, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.9f));
 		staticShader.setMat4("model", model);
 		puertaizq.Draw(staticShader);
@@ -734,6 +771,7 @@ int main()
 		//Puerta der
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
+		//model = glm::translate(model, glm::vec3(posX, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.9f));
 		staticShader.setMat4("model", model);
 		puertader.Draw(staticShader);
