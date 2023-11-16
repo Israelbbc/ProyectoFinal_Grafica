@@ -1,8 +1,10 @@
 ﻿/*---------------------------------------------------------*/
-/* ----------------  Práctica  11                 -----------*/
+/* ----------------  Proyecto Final               -----------*/
 /*-----------------    2024-1   ---------------------------*/
-/*------------- Alumno:Barrionuevo Pérez Daniel Alejandro              ---------------*/
-/*------------- No. Cuenta: 316303116                 ---------------*/
+/*-- Barrionuevo Pérez Daniel Alejandro	No. de cuenta: 316303116	Grupo:03 --*/
+/*-- Bustamante Colín Israel			No.de cuenta : 316193384	Grupo:04 --*/
+/*-- Martínez Bautista Victor Eduardo	No.de cuenta : 316255637	Grupo:03 --*/
+
 #include <Windows.h>
 
 #include <glad/glad.h>
@@ -511,8 +513,20 @@ int main()
 	Model puertaizq("resources/objects/Puerta izq/puerta izq.obj");
 	Model puertader("resources/objects/Puerta der/puerta der.obj");
 
-	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
-	animacionPersonaje.initShaders(animShader.ID);
+	ModelAnim guerrero_a("resources/objects/Guerrero_A/guerrero_a.dae");
+	guerrero_a.initShaders(animShader.ID);
+
+	ModelAnim guerrero_o("resources/objects/Guerrero_O/guerrero_o.dae");
+	guerrero_o.initShaders(animShader.ID);
+
+	ModelAnim guerrero_m("resources/objects/Guerrero_M/guerrero_m.dae");
+	guerrero_m.initShaders(animShader.ID);
+
+	ModelAnim guerrero_odos("resources/objects/Guerrero_O2/guerrero_o2.dae");
+	guerrero_odos.initShaders(animShader.ID);
+
+	ModelAnim guerrero_otres("resources/objects/Guerrero_O3/guerrero_o3.dae");
+	guerrero_otres.initShaders(animShader.ID);
 
 
 	//Inicialización de KeyFrames
@@ -638,7 +652,7 @@ int main()
 
 
 		// -------------------------------------------------------------------------------------------------------------------------
-		// Personaje Animacion
+		// Personajes Animados Complejos
 		// -------------------------------------------------------------------------------------------------------------------------
 		//Remember to activate the shader with the animation
 		animShader.use();
@@ -653,24 +667,44 @@ int main()
 		animShader.setVec3("light.direction", lightDirection);
 		animShader.setVec3("viewPos", camera.Position);
 
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-40.3f, 1.75f, 0.3f)); // translate it down so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(1.2f));	// it's a bit too big for our scene, so scale it down
+		//Guerrero_Azteca
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(230.0f, 0.0f, -180.0f));
+		model = glm::scale(model, glm::vec3(45.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		animShader.setMat4("model", model);
+		guerrero_a.Draw(animShader);
+
+		//Guerrero_Olmeca
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-290.0f, 0.0f, -100.0f));
+		model = glm::scale(model, glm::vec3(0.5f));
+		model = glm::rotate(model, glm::radians(135.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		animShader.setMat4("model", model);
+		guerrero_o.Draw(animShader);
+
+		//Guerrero_Maya
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(15.0f, 46.0f, -350.0f));
+		model = glm::scale(model, glm::vec3(0.5f));
+		animShader.setMat4("model", model);
+		guerrero_m.Draw(animShader);
+
+		//Guerrero_Olmeca2
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-290.0f, 0.0f, -200.0f));
+		model = glm::scale(model, glm::vec3(0.5f));
+		model = glm::rotate(model, glm::radians(-45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		animShader.setMat4("model", model);
+		guerrero_odos.Draw(animShader);
+
+		//Guerrero_Olmeca3
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-235.0f, 0.0f, -150.0f));
+		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
-		//animacionPersonaje.Draw(animShader);
+		guerrero_otres.Draw(animShader);
+
+
 
 		// -------------------------------------------------------------------------------------------------------------------------
-		// Segundo Personaje Animacion
-		// -------------------------------------------------------------------------------------------------------------------------
-
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(40.3f, 1.75f, 0.3f)); // translate it down so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(0.5f));	// it's a bit too big for our scene, so scale it down
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		animShader.setMat4("model", model);
-		//ninja.Draw(animShader);
-
-		// -------------------------------------------------------------------------------------------------------------------------
-		// Escenario
+		// Animaciones estáticas
 		// -------------------------------------------------------------------------------------------------------------------------
 		staticShader.use();
 		staticShader.setMat4("projection", projection);
