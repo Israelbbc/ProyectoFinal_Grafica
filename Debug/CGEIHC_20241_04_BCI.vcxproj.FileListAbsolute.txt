@@ -6,3 +6,4 @@ C:\Users\Israel Bustamante\source\repos\CGEIHC_20241_04_BCI_6\Debug\CGEIHC_20241
 C:\Users\Israel Bustamante\source\repos\CGEIHC_20241_04_BCI_PROYFINAL\Debug\CGEIHC_20241_04_BCI.exe
 C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Debug\CGEIHC_20241_04_BCI.exe
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Debug\CGEIHC_20241_04_BCI.exe
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Debug\CGEIHC_20241_04_BCI.exe

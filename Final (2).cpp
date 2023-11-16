@@ -685,7 +685,7 @@ int main()
 		guerrero_a.Draw(animShader);
 
 		//Guerrero_Olmeca
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-290.0f, 0.0f, -100.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-270.0f, 0.0f, -100.0f));
 		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(135.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
@@ -698,14 +698,14 @@ int main()
 		guerrero_m.Draw(animShader);
 
 		//Guerrero_Olmeca2
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-290.0f, 0.0f, -200.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-270.0f, 0.0f, -200.0f));
 		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(-45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
 		guerrero_odos.Draw(animShader);
 
 		//Guerrero_Olmeca3
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-235.0f, 0.0f, -150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-215.0f, 0.0f, -150.0f));
 		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
@@ -753,7 +753,7 @@ int main()
 
 		//Piramide
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(10.0f, 0.0f, -350.0f));
-		model = glm::translate(model, glm::vec3(0.0f, posY , 0.0f));
+		model = glm::rotate(model, glm::radians(girocalendario), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.03f));
 		staticShader.setMat4("model", model);
 		piramide.Draw(staticShader);
@@ -787,7 +787,7 @@ int main()
 
 
 		//Cabeza olmeca
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-200.0f, 10.0f, -150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-280.0f, 10.0f, -150.0f));
 		model = glm::scale(model, glm::vec3(3.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(giroCabeza), glm::vec3(0.0f, 1.0f, 0.0f)); 
