@@ -2,13 +2,13 @@
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\include\shader_m.h(44,40): warning C4101: 'e': variable local sin referencia
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\include\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\include\modelAnim.h(520,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(969,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(970,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(974,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(975,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(977,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(978,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(986,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(975,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(976,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(980,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(981,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(983,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(984,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(992,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(context.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(init.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(input.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración

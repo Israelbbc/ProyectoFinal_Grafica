@@ -483,7 +483,7 @@ int main()
 	Model piramide("resources/objects/piramide/piramide.obj");
 	Model calendario("resources/objects/Calendario/Calenadrio.obj");
 	Model cabezaolmeca("resources/objects/Cabeza/cabezaolmeca.obj");
-
+	Model cofre("resources/objects/Cofre/cofre.obj");
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
 	animacionPersonaje.initShaders(animShader.ID);
@@ -714,6 +714,12 @@ int main()
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); 
 		staticShader.setMat4("model", model);
 		cabezaolmeca.Draw(staticShader);
+
+		//Cofre azteca
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(220.0f, 0.0f, -220.0f));
+		model = glm::scale(model, glm::vec3(25.0f));
+		staticShader.setMat4("model", model);
+		cofre.Draw(staticShader);
 
 
 		// -------------------------------------------------------------------------------------------------------------------------
