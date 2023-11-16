@@ -1,8 +1,9 @@
 ﻿/*---------------------------------------------------------*/
-/* ----------------  Práctica  11                 -----------*/
+/* ----------------  Proyecto Final               -----------*/
 /*-----------------    2024-1   ---------------------------*/
-/*------------- Alumno:Barrionuevo Pérez Daniel Alejandro              ---------------*/
-/*------------- No. Cuenta: 316303116                 ---------------*/
+/*-- Barrionuevo Pérez Daniel Alejandro	No. de cuenta: 316303116	Grupo:03 --*/
+/*-- Bustamante Colín Israel			No.de cuenta : 316193384	Grupo:04 --*/
+/*-- Martínez Bautista Victor Eduardo	No.de cuenta : 316255637	Grupo:03 --*/
 #include <Windows.h>
 
 #include <glad/glad.h>
