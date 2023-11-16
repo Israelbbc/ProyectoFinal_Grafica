@@ -1,0 +1,12 @@
+﻿  Final (2).cpp
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\include\shader_m.h(44,40): warning C4101: 'e': variable local sin referencia
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\include\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\include\modelAnim.h(520,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(964,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(965,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(969,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(970,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(972,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(973,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Final (2).cpp(981,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  CGEIHC_20241_04_BCI.vcxproj -> C:\Users\Edd\Documents\GitHub\Proyecto_Final_Grafica\Debug\CGEIHC_20241_04_BCI.exe
