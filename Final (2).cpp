@@ -1,10 +1,9 @@
 ﻿/*---------------------------------------------------------*/
+/* ----------------  Práctica  11                 -----------*/
 /*-----------------    2024-1   ---------------------------*/
-/*-------------------- Proyecto Final             ---------------*/
-/*------------- Barrionuevo Perez Daniel Alejandro  No. Cuenta: 316303116---------------*/
-/*------------- Bustamante Colín Israel			    No. de cuenta: 316193384---------------*/
-/*------------- Martinez Bautista Victor Eduardo    No. Cuenta: 316255637---------------*/
-#include <Windows.h> 
+/*------------- Alumno:Barrionuevo Pérez Daniel Alejandro              ---------------*/
+/*------------- No. Cuenta: 316303116                 ---------------*/
+#include <Windows.h>
 
 #include <glad/glad.h>
 #include <glfw3.h>	//main
@@ -115,7 +114,7 @@ float	incX = 0.0f,
 		girodiscoInc = 0.0f;
 
 #define MAX_FRAMES 19  //Nos va a indicar cuantos cuadros claves va a poder guardar nuestro sistema
-int i_max_steps = 120;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
+int i_max_steps = 60;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
 int i_curr_steps = 0;
 
 // Esta estructura es la que se va a encargar de guardar los datos para mi sistema
@@ -483,6 +482,7 @@ int main()
 	Model tren("resources/objects/Tren/trenecito.obj");
 	Model piramide("resources/objects/piramide/piramide.obj");
 	Model calendario("resources/objects/Calendario/Calenadrio.obj");
+	Model cabezaolmeca("resources/objects/Cabeza/cabezaolmeca.obj");
 
 
 	ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae"); //La mayor compatibilidad es con DAE 
@@ -710,6 +710,12 @@ int main()
 		model = glm::translate(glm::mat4(1.0f), glm::vec3(-100.0f, 10.0f, 150.0f));
 		staticShader.setMat4("model", model);
 		tren.Draw(staticShader);
+
+		//Cabeza olmeca
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(50.0f, 10.0f, 150.0f));
+		staticShader.setMat4("model", model);
+		cabezaolmeca.Draw(staticShader);
+
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Carro
