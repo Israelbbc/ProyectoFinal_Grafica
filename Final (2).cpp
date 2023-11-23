@@ -80,7 +80,20 @@ glm::vec3 ambientColor = diffuseColor * glm::vec3(0.75f);
 float	movAuto_x = 0.0f,
 		movAuto_z = 0.0f,
 		movAuto_y = 0.0f,
-		orienta = 0.0f;
+		orienta = 0.0f,
+		orientaA = 0.0f,
+		orientaB = 0.0f,
+		t = 0.0f,
+		movGAx = 0.0f,
+		movGAy = 0.0f,
+		movGAz = 0.0f,
+		movGMx = 0.0f,
+		movGMy = 0.0f,
+		movGMz = 0.0f,
+		movGOx = 0.0f,
+		movGOy = 0.0f,
+		movGOz = 0.0f;
+
 bool	animacion = false,
 		recorrido1 = true,
 		recorrido2 = false,
@@ -295,67 +308,123 @@ void animate(void)
 		}
 	}
 
-	//Vehículo
+	//Personajes
 	if (animacion)
 	{
-		if (circuito_auto == 0)
+		if (circuito_GO == 0)
 		{
-			movAuto_z += 3.0f;
-			orienta = 0.0f;
-			if (movAuto_z >= 200.0f)
-				circuito_auto = 5;
+			movGOx += 1.0f;
+			if (movGOx == 20.0f)
+				circuito_GO = 1;
 		}
-		if (circuito_auto == 1)
+		if (circuito_GO == 1)
 		{
-			movAuto_x -= 3.0f;
+			orientaB = -90.0f;
+			movGOz += 1.0f;
+			if (movGOz == 100.0f)
+				circuito_GO = 2;
+		}
+		if (circuito_GO == 2)
+		{
+			orientaB = -240.0f;
+			movGOz -= 1.0f;
+			if (movGOz == -100.0f)
+				circuito_GO = 3;
+		}
+		if (circuito_GO == 3)
+		{
+			orientaB = -90.0f;
+			movGOz += 1.0f;
+			if (movGOz == 0.0f)
+				circuito_GO = 4;
+		}
+		if (circuito_GO == 4)
+		{
+			orientaB = -180.0f;
+			movGOx -= 1.0f;
+			if (movGOx == 0.0f)
+				circuito_GO = 5;
+		}
+		if (circuito_GO == 5)
+		{
+			orientaB = 360.0f;
+			circuito_GO = 0;
+		}
+
+
+		if (circuito_GM == 0)
+		{
+			t += 0.1f;
+			movGMy = (20 * sin(1.44) * t) - (0.5 * 9.8 * t * t);
+			movGMz = (20 * sin(0.8080) * t);
+			if (movGMz >= 83.0f)
+				circuito_GM = 1;
+		}
+		if (circuito_GM == 1)
+		{
+			movGMy = 0.0f;
+			movGMz = 0.0f;
+			t = 0.0f;
+			if (movGMy == 0.0f)
+				circuito_GM = 0;
+		}
+
+
+		if (circuito_GA == 0)
+		{
+			movGAz += 1.0f;
+			if (movGAz == 30.0f)
+				circuito_GA = 1;
+		}
+		if (circuito_GA == 1)
+		{
 			orienta = -90.0f;
-			if (movAuto_x <= -250.0f)
-				circuito_auto = 2;
+			movGAx -= 1.0f;
+			if (movGAx == -70.0f)
+				circuito_GA = 2;
 		}
-		if (circuito_auto == 2)
+		if (circuito_GA == 2)
 		{
-			movAuto_z -= 3.0f;
-			orienta = 180.0f;
-			if (movAuto_z <= -250.0f)
-				circuito_auto = 3;
+			orienta = -125.0f;
+			movGAz -= 1.0f;
+			movGAx -= 1.0f;
+			if (movGAz == -55.0f)
+				circuito_GA = 3;
 		}
-		if (circuito_auto == 3)
+		if (circuito_GA == 3)
 		{
-			movAuto_x += 3.0f;
-			orienta = 90.0f;
-			if (movAuto_x >= 0.0f)
-				circuito_auto = 4;
+			orienta = 80.0f;
+			movGAx += 1.0f;
+			if (movGAx == 180.0f)
+				circuito_GA = 4;
 		}
-		if (circuito_auto == 4)
+		if (circuito_GA == 4)
 		{
-			movAuto_x += 0.65f;
-			movAuto_z += 1.0f;
-			orienta = 33.023f;
-			if (movAuto_x >= 65.0f && movAuto_z <= -100.0f)
-				circuito_auto = 6;
+			orienta = 315.0f;
+			movGAz += 1.0f;
+			movGAx -= 1.0f;
+			if (movGAz == 40.0f)
+				circuito_GA = 5;
 		}
-		if (circuito_auto == 6)
+		if (circuito_GA == 5)
 		{
-			movAuto_x -= 0.65f;
-			movAuto_z += 1.0f;
-			orienta = -33.023f;
-			if (movAuto_x <= 0.0f && movAuto_z <= 0.0f)
-				circuito_auto = 0;
+			orienta = -75.0f;
+			movGAx -= 1.0f;
+			if (movGAx == 0.0f)
+				circuito_GA = 6;
 		}
-		/*if (circuito_auto == 4)
+		if (circuito_GA == 6)
 		{
-			movAuto_z += 3.0f;
-			orienta = 0.0f;
-			if (movAuto_z >= 0.0f)
-				circuito_auto = 0;
-		}*/
-		if (circuito_auto == 5)
+			orienta = -185.0f;
+			movGAz -= 1.0f;
+			if (movGAz == 0.0f)
+				circuito_GA = 7;
+		}
+		if (circuito_GA == 7)
 		{
-			movAuto_x -= (0.625f * 3.0f);
-			movAuto_z -= 3.0f;
-			orienta = 212.005f;
-			if (movAuto_x <= -250.0f && movAuto_z <= -200.0f)
-				circuito_auto = 3;
+			orienta = 5.0f;
+			if (movGAz == 0.0f && movGAx == 0.0f)
+				circuito_GA = 0;
 		}
 
 		/*if (!state)
@@ -678,9 +747,10 @@ int main()
 		animShader.setVec3("viewPos", camera.Position);
 
 		//Guerrero_Azteca
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(230.0f, 0.0f, -180.0f));
-		model = glm::scale(model, glm::vec3(45.0f));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(glm::mat4(1.0f), glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(-170.0f + movGAx, 0.0f, -200.0f + movGAz));
+		model = glm::scale(model, glm::vec3(0.5f));
+		model = glm::rotate(model, glm::radians(orienta), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
 		guerrero_a.Draw(animShader);
 
@@ -692,8 +762,9 @@ int main()
 		guerrero_o.Draw(animShader);
 
 		//Guerrero_Maya
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(15.0f, 46.0f, -350.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(15.0f + movGMx, 46.0f + movGMy, -350.0f + movGMz));
 		model = glm::scale(model, glm::vec3(0.5f));
+		model = glm::rotate(model, glm::radians(orientaA), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
 		guerrero_m.Draw(animShader);
 
@@ -705,9 +776,10 @@ int main()
 		guerrero_odos.Draw(animShader);
 
 		//Guerrero_Olmeca3
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(-215.0f, 0.0f, -150.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(-215.0f + movGOx, 0.0f + movGOy, -150.0f + movGOz));
 		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(orientaB), glm::vec3(0.0f, 1.0f, 0.0f));
 		animShader.setMat4("model", model);
 		guerrero_otres.Draw(animShader);
 
