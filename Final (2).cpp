@@ -100,7 +100,10 @@ bool	animacion = false,
 		recorrido3 = false,
 		recorrido4 = false;
 
-int circuito_auto = 0;
+int circuito_auto = 0,
+circuito_GA = 0,
+circuito_GM = 0,
+circuito_GO = 0;
 
 //Keyframes (Manipulación y dibujo)
 float	posX = 0.0f,
