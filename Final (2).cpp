@@ -104,7 +104,9 @@ float	posX = 0.0f,
 		girodisco = 0.0f,
 		girocalendario = 0.0f,
 		giroojo = 0.0f,
-		giropiedra = 0.0f;
+		giropiedra = 0.0f,
+		movcalendariox = 0.0f,
+		movcalendarioy = 0.0f;
 
 // Para calculo de invremento que se va a realizar
 float	incX = 0.0f,
@@ -121,10 +123,12 @@ float	incX = 0.0f,
 		girodiscoInc = 0.0f,
 		girocalendarioInc = 0.0f,
 		giroojoInc = 0.0f,
+		movcalendarioxInc = 0.0f,
+		movcalendarioyInc = 0.0f,
 		giropiedraInc = 0.0f;
 
 #define MAX_FRAMES 20  //Nos va a indicar cuantos cuadros claves va a poder guardar nuestro sistema
-int i_max_steps = 120;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
+int i_max_steps = 60;  //Cuantos cuadros intermedios nos va a generar . Entre menos cuadros pida, más rápida va a ser la transicion pero será más brusca
 int i_curr_steps = 0;
 
 // Esta estructura es la que se va a encargar de guardar los datos para mi sistema
@@ -146,6 +150,8 @@ typedef struct _frame
 	float girocalendario;
 	float giroojo;
 	float giropiedra;
+	float movcalendariox;
+	float movcalendarioy;
 
 }FRAME;
 
@@ -178,6 +184,8 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].girocalendario = girocalendario;
 	KeyFrame[FrameIndex].giroojo = giroojo;
 	KeyFrame[FrameIndex].giropiedra = giropiedra;
+	KeyFrame[FrameIndex].movcalendariox = movcalendarioy;
+	KeyFrame[FrameIndex].movcalendarioy = movcalendarioy;
 
 
 	FrameIndex++;
@@ -204,6 +212,8 @@ void resetElements(void)
 	girocalendario = KeyFrame[0].girocalendario;
 	giroojo = KeyFrame[0].giroojo;
 	giropiedra = KeyFrame[0].giropiedra;
+	movcalendariox = KeyFrame[0].movcalendariox;
+	movcalendarioy = KeyFrame[0].movcalendarioy;
 
 }
 
@@ -214,6 +224,10 @@ void interpolation(void)
 	incX2 = (KeyFrame[playIndex + 1].posX2 - KeyFrame[playIndex].posX2) / i_max_steps;
 	incY = (KeyFrame[playIndex + 1].posY - KeyFrame[playIndex].posY) / i_max_steps;
 	incZ = (KeyFrame[playIndex + 1].posZ - KeyFrame[playIndex].posZ) / i_max_steps;
+
+	movcalendarioxInc = (KeyFrame[playIndex + 1].movcalendariox - KeyFrame[playIndex].movcalendariox) / i_max_steps;
+	movcalendarioyInc = (KeyFrame[playIndex + 1].movcalendarioy - KeyFrame[playIndex].movcalendarioy) / i_max_steps;
+
 
 	rotInc = (KeyFrame[playIndex + 1].rotRodIzq - KeyFrame[playIndex].rotRodIzq) / i_max_steps;
 	giroMonitoInc = (KeyFrame[playIndex + 1].giroMonito - KeyFrame[playIndex].giroMonito) / i_max_steps;
@@ -276,6 +290,9 @@ void animate(void)
 			posX2 += incX2;
 			posY += incY;
 			posZ += incZ;
+
+			movcalendariox += movcalendarioxInc;
+			movcalendarioy += movcalendarioyInc;
 
 			rotRodIzq += rotInc;
 			giroMonito += giroMonitoInc;
@@ -556,7 +573,9 @@ int main()
 		KeyFrame[0].giroMonito = 90;
 		KeyFrame[0].giroCabeza = 0.0f;
 		KeyFrame[0].girodisco = 0.0f;
-		KeyFrame[0].girocalendario = 0.0f;
+		//KeyFrame[0].girocalendario = 0.0f;
+		//KeyFrame[0].movcalendariox = 0.0f;
+		KeyFrame[0].movcalendarioy = 0.0f;
 		KeyFrame[0].giroojo = 0.0f;
 		KeyFrame[0].giropiedra = 0.0f;
 
@@ -569,9 +588,20 @@ int main()
 		KeyFrame[1].giroBrazoDer = -90.0f;
 		KeyFrame[1].giroCabeza = 360.0f;
 		KeyFrame[1].girodisco = 360.0f;
-		KeyFrame[1].girocalendario = 1360.0f;
+		//KeyFrame[1].girocalendario = 1360.0f;
+		KeyFrame[1].movcalendariox = -100.0f;
+		KeyFrame[1].movcalendarioy = 0.0f;
 		KeyFrame[1].giroojo = 360.0f;
 		KeyFrame[1].giropiedra = 360.0f;
+
+		KeyFrame[2].girocalendario = 180.0f;
+		//KeyFrame[2].movcalendarioy = 0.0f;
+
+		KeyFrame[3].girocalendario = 0.0f;
+		KeyFrame[3].movcalendarioy = -40.0f;
+		KeyFrame[3].movcalendariox = -60.0f;
+
+
 
 		/*KeyFrame[2].posX = 40.0f;
 		KeyFrame[2].posY = 0.0f;
@@ -743,10 +773,11 @@ int main()
 		piedra.Draw(staticShader);
 
 		//calendario
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(350.0f, 10.0f, -100.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(250.0f, 30.0f, -100.0f));
 		//model = glm::translate(tmp, glm::vec3(0));
 		model = glm::scale(model, glm::vec3(0.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(0, movcalendarioy, movcalendariox));
 		model = glm::rotate(model, glm::radians(girocalendario), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		calendario.Draw(staticShader);

@@ -2,13 +2,13 @@
 C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\include\shader_m.h(44,40): warning C4101: 'e': variable local sin referencia
 C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\include\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\include\modelAnim.h(520,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1096,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1097,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1101,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1102,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1104,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1105,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1113,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1127,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1128,11): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1132,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1133,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1135,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1136,10): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Mauguicax\Documents\GitHub\ProyectoFinal_Grafica\Final (2).cpp(1144,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 glfw3.lib(context.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(context.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(init.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(init.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
 glfw3.lib(input.obj) : warning LNK4099: no se encontró PDB '' con 'glfw3.lib(input.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
