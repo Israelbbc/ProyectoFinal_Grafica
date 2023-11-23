@@ -743,10 +743,10 @@ int main()
 		piedra.Draw(staticShader);
 
 		//calendario
-		model = glm::translate(glm::mat4(1.0f), glm::vec3(200.0f, 10.0f, -100.0f));
+		model = glm::translate(glm::mat4(1.0f), glm::vec3(350.0f, 10.0f, -100.0f));
 		//model = glm::translate(tmp, glm::vec3(0));
 		model = glm::scale(model, glm::vec3(0.5f));
-		model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(girocalendario), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		calendario.Draw(staticShader);
